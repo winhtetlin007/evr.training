@@ -6,14 +6,18 @@
 }
 
 body {
-  background: linear-gradient(135deg, #f5f7fa 0%, #e4edf5 100%);
-  color: #333;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
+  font-family: Arial, Helvetica, sans-serif;
 }
 
-/* Header Styles */
+/* Style the header */
+header {
+  background-color: #28329c;
+  padding: 30px;
+  text-align: center;
+  font-size: 25px;
+  color: white;
+}
+
 header {
   background: linear-gradient(90deg, #4b6cb7 0%, #182848 100%);
   padding: 1rem 0;
@@ -23,38 +27,16 @@ header {
   z-index: 100;
 }
 
-.logo-container {
+main {
+  flex: 1;
   display: flex;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
-  margin-bottom: 1rem;
+  padding: 2rem;
+  text-align: center;
+  color: #4b6cb7;
 }
-
-.logo {
-  width: 60px;
-  height: 60px;
-  backgroun: linear-gradient(45deg, #ff9a9e 0%, #fad0c4 100%);
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  margin-right: 15px;
-  box-shadow: 0 0px 0px rgba(0, 0, 0, 0.2);
-}
-
-.logo i {
-  font-size: 28px;
-  color: #fff;
-}
-
-.logo-text {
-  color: white;
-  font-size: 2rem;
-  font-weight: bold;
-  letter-spacing: 1px;
-}
-
-/* Navigation Styles */
 nav {
   background-color: rgba(255, 255, 255, 0.1);
   backdrop-filter: blur(10px);
@@ -78,13 +60,13 @@ nav {
   text-decoration: none;
   padding: 10px 20px;
   border-radius: 30px;
-  font-weight: 500;
+  font-weight: 200;
   transition: all 0.3s ease;
   display: block;
 }
 
 .nav-links a:hover {
-  background-color: rgba(255, 255, 255, 0.2);
+  background-color: rgba(26, 220, 107, 0.494);
   transform: translateY(-2px);
 }
 
@@ -92,67 +74,29 @@ nav {
   background-color: rgba(255, 255, 255, 0.3);
 }
 
-/* Main Content Styles */
-main {
-  flex: 1;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  padding: 2rem;
+/* Clear floats after the columns */
+section::after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+/* Style the footer */
+footer {
+  background-color: #777;
+  padding: 10px;
   text-align: center;
-  color: #4b6cb7;
+  color: white;
 }
 
-.main-content {
-  max-width: 800px;
+/* Responsive layout - makes the two columns/boxes stack on top of each other instead of next to each other, on small screens */
+@media (max-width: 600px) {
+  nav,
+  article {
+    width: 100%;
+    height: auto;
+  }
 }
-
-.main-content h1 {
-  font-size: 3rem;
-  margin-bottom: 1.5rem;
-  background: linear-gradient(90deg, #4b6cb7, #182848);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-}
-
-.main-content p {
-  font-size: 1.2rem;
-  line-height: 1.8;
-  color: #555;
-  margin-bottom: 2rem;
-}
-
-.icon-container {
-  display: flex;
-  justify-content: center;
-  gap: 30px;
-  margin-top: 20px;
-}
-
-.icon-box {
-  width: 100px;
-  height: 100px;
-  background: white;
-  border-radius: 20px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-.icon-box:hover {
-  transform: translateY(-10px);
-  box-shadow: 0 12px 25px rgba(0, 0, 0, 0.15);
-}
-
-.icon-box i {
-  font-size: 40px;
-  color: #4b6cb7;
-}
-
-/* Footer Styles */
 footer {
   background: linear-gradient(90deg, #182848 0%, #4b6cb7 100%);
   color: white;
